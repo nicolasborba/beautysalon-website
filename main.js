@@ -44,14 +44,13 @@ const swiper = new Swiper('.swiper-container', {
   pagination: {
     el: '.swiper-pagination' // adiciona paginação
   },
-  mousewheel: true, // habilita rodinha do mouse
   keyboard: true, // habilita setas do teclado
 
   /* o Swiper vem com função de breakpoints inclusa, conforme documentação */
 
   breakpoints: {
     /* aqui ele entende o valor como "maior ou igual". no caso, maior ou igual a 767 pixels */
-    767: {
+    992: {
       slidesPerView: 2 /* quantos slides de uma vez */,
       setWrapperSize: true /* habilita aparecimento de mais um, dando size ao wrapper configurado segundo a documentação */
     }

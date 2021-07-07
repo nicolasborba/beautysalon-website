@@ -552,32 +552,126 @@ footer .social a:hover {
 /*========= RESPONSIVE  ==========================================*/
 
 /*======== MEDIA QUERIES =========*/
-/* extra large devices: 1200 > */
 
-@media (min-width: 1200px) {
-  /* layout */
-  .container {
-    max-width: 1120px;
-    margin-left: auto; /* essa seção para deixar os itens ajustados ao meio, sem esticar demais */
+/* small-medium devices: 600 > */
+
+@media (min-width: 600px) {
+  /* home */
+
+  #home .image {
+    max-width: 600px;
+    display: block;
+    margin-left: auto;
     margin-right: auto;
   }
 
-  .section {
-    padding: 10rem 0;
+  #home .image::before {
+    max-width: 600px;
   }
+
+  #home .text {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* about */
+
+  #about .image {
+    max-height: 334px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #about .image::before {
+    max-width: 600px;
+  }
+
+  #about .image img {
+    left: 2.9375rem;
+  }
+
+  #about .text {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* services */
+
+  #services header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    max-width: 32rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cards > div:first-child {
+    grid-column: span 2;
+  }
+
+  /* testimonials */
+
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* swiper */
+
+  #testimonials .testimonial blockquote {
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* contact */
+
+  #contact {
+    max-width: 32rem;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #contact ul {
+    justify-content: center;
+  }
+
+  #contact ul li {
+    display: inline-block;
+  }
+
+  /* footer */
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* medium devices: 767 > */
+
+@media (min-width: 767px) {
+  /* layout */
 
   nav .menu {
     opacity: 1;
     visibility: visible;
     top: 0;
-  }
-
-  .button {
-    height: 3.125rem;
-  }
-
-  main {
-    margin-top: var(--header-height);
   }
 
   /* navigation */
@@ -600,12 +694,50 @@ footer .social a:hover {
     display: none;
   }
 
+  /* services */
+
+  #services header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* large devices: 992 > */
+
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+
+  /* layout */
+  .container {
+    max-width: 1120px;
+    margin-left: 1.5rem; /* essa seção para deixar os itens ajustados ao meio, sem esticar demais */
+    margin-right: 1.5rem;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /* navigation */
+
   /* home */
 
   #home .container {
     grid-auto-flow: column; /* ajustando o conteúdo da home (breakpoints) */
     justify-content: space-between;
-    margin: 0 auto;
   }
 
   #home .image {
@@ -614,6 +746,7 @@ footer .social a:hover {
 
   #home .text {
     order: 0;
+    margin-left: 1.5rem;
     max-width: 24rem;
     text-align: left;
   }
@@ -625,17 +758,28 @@ footer .social a:hover {
     margin: 0 auto;
   }
 
-  /* services */
-
-  #services header {
-    max-width: 32rem;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  #about .image::before {
+    max-height: 282px;
   }
+
+  #about .image img {
+    left: 0;
+  }
+
+  #about .text {
+    margin-right: 1.5rem;
+  }
+
+  /* services */
 
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+    max-width: none;
+    margin: 0;
+  }
+
+  .cards > div:first-child {
+    grid-column: span 1;
   }
 
   .card {
@@ -644,13 +788,6 @@ footer .social a:hover {
   }
 
   /* testimonials */
-
-  #testimonials header {
-    max-width: 32rem;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   #testimonials .container {
     margin-left: auto;
@@ -662,6 +799,11 @@ footer .social a:hover {
   }
 
   /* contact */
+
+  #contact {
+    max-width: none;
+    text-align: left;
+  }
 
   #contact .container {
     grid-auto-flow: column;
@@ -677,16 +819,14 @@ footer .social a:hover {
     max-width: 22.75rem;
   }
 
+  #contact ul {
+    justify-content: auto;
+  }
+
   /* footer */
 
   footer.section {
     padding: 3.75rem 0;
-  }
-
-  footer .container {
-    grid-auto-flow: column;
-    align-items: center;
-    justify-content: space-between;
   }
 
   footer .logo {
@@ -695,13 +835,25 @@ footer .social a:hover {
 }
 
 /* large devices: 1023 > */
-/* large devices: 992 > */
 
-@media (min-width: 992px) {
-  :root {
-    --title-font-size: 2.25rem;
-    --subtitle-font-size: 1.125rem;
+@media (min-width: 1023px) {
+  #about .image::before {
+    max-height: none;
   }
 }
 
-/* medium devices: 767 > */
+/* extra large devices: 1200 > */
+
+@media (min-width: 1200px) {
+  /* layout */
+  .container {
+    margin-left: auto; /* essa seção para deixar os itens ajustados ao meio, sem esticar demais */
+    margin-right: auto;
+  }
+
+  /* home */
+
+  #home .container {
+    margin: 0 auto;
+  }
+}
