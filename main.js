@@ -157,13 +157,19 @@ function backToTopChangeColor() {
 
   const scrolledToFooter =
     window.pageYOffset + window.innerHeight >=
-    footerHeight + BackToTopButtonHeight
+    footerHeight + BackToTopButtonHeight - BackToTopButtonHeight / 4
   /* define uma constante pra quando a altura scrollada (contando do topo) somada à altura da janela passar da altura do topo do footer somada à altura do topo do botão back-to-top. */
   // ou seja, quando você já estiver vendo o footer e o topo do botão back-to-top tiver passado o topo do footer, scrolledToFooter se torna truthy
 
   if (scrolledToFooter) {
     backToTopButton.classList.add('bottom')
-  } else {
+  }
+
+  const scrolledBack =
+    window.pageYOffset + window.innerHeight <=
+    footerHeight + BackToTopButtonHeight - BackToTopButtonHeight / 3
+
+  if (scrolledBack) {
     backToTopButton.classList.remove('bottom')
   }
 }

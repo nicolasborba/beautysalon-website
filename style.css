@@ -547,6 +547,7 @@ footer .social a:hover {
   transform: translateY(
     0
   ); /*retorna o item ao local padrão. isso junto com o anterior faz o botão "subir" na tela */
+  transition: 0.6s;
 }
 
 .back-to-top.bottom {
@@ -554,6 +555,21 @@ footer .social a:hover {
   background: var(--text-color-light);
   color: var(--base-color);
   /* font-size: 2rem; */
+  transition: 0.6s;
+}
+
+.icon-arrow-up {
+  overflow: hidden;
+}
+
+.back-to-top:hover i:before {
+  transition: 0.6s;
+  top: -0.5rem;
+}
+
+.back-to-top:hover i:after {
+  transition: 0.6s;
+  top: -1.5rem;
 }
 
 /*========= RESPONSIVE  ==========================================*/

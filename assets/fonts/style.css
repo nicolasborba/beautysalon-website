@@ -28,6 +28,16 @@
 
 .icon-arrow-up:before {
   content: '\e900';
+  position: relative;
+  top: 1.5rem;
+  transition: 0s;
+}
+.icon-arrow-up:after {
+  content: '\a \a \e900';
+  position: relative;
+  top: 0.5rem;
+  white-space: pre;
+  transition: 0s;
 }
 .icon-phone:before {
   content: '\e901';
