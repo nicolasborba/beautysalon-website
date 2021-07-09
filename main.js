@@ -83,7 +83,7 @@ scrollReveal.reveal(
 
 const backToTopButton = document.querySelector('.back-to-top')
 
-function backToTop() {
+function backToTopShow() {
   if (window.scrollY >= 560) {
     backToTopButton.classList.add('show')
   } else {
@@ -137,6 +137,33 @@ function highlightMenuCurrentSection() {
 /* When scroll (sombra no header e também o botão de voltar ao topo, além do highlight no menu) */
 window.addEventListener('scroll', function () {
   shadowHeaderWhenScroll()
-  backToTop()
+  backToTopShow()
   highlightMenuCurrentSection()
+  backToTopChangeColor()
 })
+
+/* CHANGE BACK-TO-TOP COLOR IF ON FOOTER */
+
+// fazendo o botão de back-to-top mudar de cor ao chegar no footer
+
+function backToTopChangeColor() {
+  const footer = document.querySelector('footer')
+  //seleciona o footer
+
+  const footerHeight = footer.offsetTop
+  // pega a altura do topo do footer
+
+  const BackToTopButtonHeight = backToTopButton.offsetHeight
+
+  const scrolledToFooter =
+    window.pageYOffset + window.innerHeight >=
+    footerHeight + BackToTopButtonHeight
+  /* define uma constante pra quando a altura scrollada (contando do topo) somada à altura da janela passar da altura do topo do footer somada à altura do topo do botão back-to-top. */
+  // ou seja, quando você já estiver vendo o footer e o topo do botão back-to-top tiver passado o topo do footer, scrolledToFooter se torna truthy
+
+  if (scrolledToFooter) {
+    backToTopButton.classList.add('bottom')
+  } else {
+    backToTopButton.classList.remove('bottom')
+  }
+}

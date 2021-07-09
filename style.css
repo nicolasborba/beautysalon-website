@@ -549,6 +549,13 @@ footer .social a:hover {
   ); /*retorna o item ao local padrão. isso junto com o anterior faz o botão "subir" na tela */
 }
 
+.back-to-top.bottom {
+  /* fazendo o botão de back-to-top mudar de cor quando chega ao footer */
+  background: var(--text-color-light);
+  color: var(--base-color);
+  /* font-size: 2rem; */
+}
+
 /*========= RESPONSIVE  ==========================================*/
 
 /*======== MEDIA QUERIES =========*/
