@@ -20,6 +20,7 @@ img {
 
 /*========= VARIABLES ==========================================*/
 :root {
+  overflow-x: hidden; /* this line removes issue with scrolling. remove if needed */
   --header-height: 4.5rem;
   /* COLORS */
   --hue: 159;
@@ -49,6 +50,7 @@ html {
 }
 
 body {
+  overflow-x: hidden; /* this line removes issue with scrolling. remove if needed */
   font: 400 1rem var(--body-font), sans-serif;
   color: var(--text-color);
   background: var(--body-color);
